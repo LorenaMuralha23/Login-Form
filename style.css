@@ -11,6 +11,7 @@
 
 .main{
     display: flex;
+    justify-content: space-between;
 }
 
 .img-wrapper{
@@ -29,7 +30,7 @@
 }
 
 .left-login{
-    position: absolute;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -87,8 +88,7 @@
 }
 
 .right-login{
-    position: absolute;
-    right: 0;
+    z-index: 1;
     width: 40vw;
     height: 100vh;
     display: flex;
@@ -120,7 +120,7 @@
 
 .textfield > input{
     width: 100%;
-    padding: 10px 100px;
+    padding: .8rem 8rem;
     font-size: 13pt;
     margin-bottom: 30px;
     outline: none;
@@ -130,8 +130,9 @@
 }
 
 .textfield > input::placeholder{
-    color: rgb(68, 68, 68);
+    color: rgb(168, 168, 168);
 }
+
 
 .submit-options{
     display: flex;
@@ -141,11 +142,160 @@
 }
 
 .submit-options button{
-    padding: 10px 35px;
+    padding: 1rem 2rem;
     font-size: 15pt;
-    background: linear-gradient(45deg,#5a2a2a, rgb(95, 31, 31), rgb(49, 12, 12));
+    background: linear-gradient(to left,#681a1a, rgb(131, 22, 22), rgb(58, 3, 3));
     color: #fff;
     border: none;
+    border-radius: 10px;
     outline: none;
     cursor: pointer;
+    background-size: 120%;
+    transition: .7s;
 }
+
+.submit-options button:hover{
+    background-position: right;
+}
+
+
+.submit-options a{
+    color: rgb(168, 168, 168);
+    text-decoration: none;
+}
+
+.submit-options a::after{
+    content: '';
+    height: 2px;
+    width: 0%;
+    background-color: rgb(168, 168, 168);;
+    display: block;
+    transition: .4s ease-in-out;
+}
+
+.submit-options a:hover::after{
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: rgb(168, 168, 168);;
+    display: block;
+}
+
+
+/*====RESPONSIVE====*/
+@media only screen and  (max-width: 1198px){
+   .right-login h2{
+       font-size: 44pt;
+   }
+
+   .textfield label{
+       font-size: 90%;
+   }
+
+   .textfield input{
+       width: 95%;
+       font-size: smaller;
+   }
+
+   .submit-options button{
+        font-size: 12pt;
+   }
+}
+
+@media only screen and (max-width: 1000px){
+ 
+    .textfield label{
+        font-size: 80%;
+    }
+ 
+    .textfield input{
+        width: 100%;
+        padding: .8rem 5rem;
+    }
+ 
+    .submit-options button{
+        padding: .7rem 1.5rem;
+        font-size: 13pt;
+    }
+
+    .submit-options a{
+        font-size: smaller;
+    }
+
+    .login-text h1{
+        font-size: 30pt;
+    }
+
+    .login-text p{
+        font-size: 18pt;
+    }
+
+    .login-text i{
+        font-size: 18pt;
+    }
+    
+
+}
+
+@media only screen and (max-width: 874px){
+    .right-login h2{
+        font-size: 35pt;
+    }
+ 
+    .textfield label{
+        font-size: 70%;
+    }
+ 
+    .textfield input{
+        width: 95%;
+        font-size: smaller;
+    }
+ 
+}
+
+
+@media only screen and (max-width: 800px){
+    .main{
+        flex-direction: column;
+    }
+
+    .left-login{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 50vh;
+        font-size: 30%;
+    }
+
+    .login-text{
+        margin: 0;
+        width: 100%;
+    }
+
+    .login-text h1{
+        font-size: 1.5rem;
+    }
+
+    .login-text p{
+        font-size: .8rem;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .right-login{
+        margin: 0;
+        width: 100%;
+        height: 50vh;
+        text-align: center;
+    }
+
+
+    .right-login label{
+        display: none;
+    }
+}
+
