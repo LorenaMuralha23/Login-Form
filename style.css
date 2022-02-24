@@ -299,3 +299,18 @@
     }
 }
 
+
+/*===== RESPONSIVE FOR IPHONE 5/SE =====*/
+@media only screen and (max-width: 380px){
+    .right-login h2{
+        font-size: 12pt;
+    }
+
+    .right-login input{
+        padding: .4rem;
+    }
+
+    .right-login button{
+        padding: .4rem .9rem;
+    }
+}
