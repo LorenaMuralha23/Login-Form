@@ -1,2 +1,2 @@
 # Login-Form
-A responsive login page created with HTML, CSS and JavaScript.
+A responsive login page created with HTML, CSS.
